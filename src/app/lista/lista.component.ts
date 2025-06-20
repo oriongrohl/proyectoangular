@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ItemComponent } from './item/item.component';
-import { CrudService } from '../servicios/crud.service';
+//import { CrudService } from '../servicios/crud.service';
 
 @Component({
   selector: 'app-lista',
@@ -9,12 +9,6 @@ import { CrudService } from '../servicios/crud.service';
   templateUrl: './lista.component.html',
   styleUrl: './lista.component.css'
 })
-export class ListaComponent implements OnInit {
-  clientes = [];
+export class ListaComponent {
   
-  constructor(private crudService: CrudService) {}
-
-  ngOnInit(): void {
-    //this.clientes = this.crudService.getClientes();
-  }
 }

@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { CrudService } from '../servicios/crud.service';
 
 @Component({
   selector: 'app-botones',
+  standalone: true,
   templateUrl: './botones.component.html',
   styleUrls: ['./botones.component.scss']
 })
-export class BotonesComponent implements OnInit {
-  clientes: any[] = [];
+export class BotonesComponent {
+  /*clientes: any[] = [];
 
   constructor(private crudService: CrudService) {}
 
@@ -47,5 +47,5 @@ export class BotonesComponent implements OnInit {
     this.crudService.borrarCliente(id).subscribe(() => {
       this.obtenerClientes();
     });
-  }
+  }*/
 }
