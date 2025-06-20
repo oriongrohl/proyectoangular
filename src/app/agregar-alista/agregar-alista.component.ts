@@ -1,12 +1,41 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+//import { ListaService, Item } from '../services/lista.service';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-agregar-alista',
   standalone: true,
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './agregar-alista.component.html',
-  styleUrl: './agregar-alista.component.css'
+  styleUrls: ['./agregar-alista.component.css']
 })
-export class AgregarAListaComponent {
-  
+export class AgregarAListaComponent /*implements OnInit*/ {
+  /*nuevoNombre: string = '';
+  lista: Item[] = [];
+
+  constructor(private listaService: ListaService) {}
+
+  ngOnInit() {
+    this.cargarLista();
+  }
+
+  cargarLista() {
+    this.listaService.getItems().subscribe({
+      next: items => this.lista = items,
+      error: err => console.error('Error cargando items', err)
+    });
+  }
+
+  agregar() {
+    if (!this.nuevoNombre.trim()) return;
+
+    const item: Item = { nombre: this.nuevoNombre.trim() };
+    this.listaService.addItem(item).subscribe({
+      next: nuevo => {
+        this.lista.push(nuevo);
+        this.nuevoNombre = '';
+      },
+      error: err => console.error('Error agregando item', err)
+    });
+  }*/
 }
