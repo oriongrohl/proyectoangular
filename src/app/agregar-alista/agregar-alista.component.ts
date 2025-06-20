@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-//import { ListaService, Item } from '../services/lista.service';
+//import { ListaService, Item } from '../services/crud.service.ts';
 import { FormsModule } from '@angular/forms';
 
 @Component({
