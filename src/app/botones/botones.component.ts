@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CrudService } from '../servicios/crud.service'; // ajusta la ruta si hace falta
+import { CrudService } from '../servicios/crud.service';
 
 @Component({
   selector: 'app-botones',
@@ -7,37 +7,45 @@ import { CrudService } from '../servicios/crud.service'; // ajusta la ruta si ha
   styleUrls: ['./botones.component.scss']
 })
 export class BotonesComponent implements OnInit {
-  datos: any[] = [];
+  clientes: any[] = [];
 
   constructor(private crudService: CrudService) {}
 
   ngOnInit(): void {
-    this.obtenerDatos(); // Al cargar el componente, llama al servicio
+    this.obtenerClientes();
   }
 
-  obtenerDatos(): void {
-    this.crudService.getAll().subscribe(response => {
-      this.datos = response;
+  obtenerClientes(): void {
+    this.crudService.getCliente().subscribe(data => {
+      this.clientes = data;
     });
   }
 
-  crear(): void {
-    const nuevo = { nombre: 'Ejemplo', edad: 30 }; // cambia según tu API
-    this.crudService.create(nuevo).subscribe(() => {
-      this.obtenerDatos(); // refresca la lista
+  crearCliente(): void {
+    const nuevo = {
+      name: 'Nuevo Cliente',
+      email: 'nuevo@email.com'
+    };
+
+    this.crudService.crearCliente(nuevo).subscribe(() => {
+      this.obtenerClientes();
     });
   }
 
-  eliminar(id: number): void {
-    this.crudService.delete(id).subscribe(() => {
-      this.obtenerDatos(); // refresca la lista
+  actualizarCliente(id: number): void {
+    const actualizados = {
+      name: 'Cliente Actualizado',
+      email: 'nuevo@email.com'
+    };
+
+    this.crudService.actualizarCliente(id, actualizados).subscribe(() => {
+      this.obtenerClientes();
     });
   }
 
-  actualizar(id: number): void {
-    const datosActualizados = { nombre: 'Actualizado', edad: 31 };
-    this.crudService.update(id, datosActualizados).subscribe(() => {
-      this.obtenerDatos(); // refresca
+  borrarCliente(id: number): void {
+    this.crudService.borrarCliente(id).subscribe(() => {
+      this.obtenerClientes();
     });
   }
 }

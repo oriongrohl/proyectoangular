@@ -5,7 +5,8 @@ import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    BotonesComponent  // << Añádelo aquí para que Angular lo conozca
   ],
   imports: [
     BrowserModule,
