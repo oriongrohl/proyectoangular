@@ -10,7 +10,7 @@ export class CrudService {
 
   constructor(private http: HttpClient) {}
 
-  getClientes(): Observable<any> {
+  getCliente(): Observable<any> {
     return this.http.get(this.apiUrl);
   }
 
