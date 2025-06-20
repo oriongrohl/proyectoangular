@@ -5,8 +5,8 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class AlumnosService {
-  private apiUrl = 'https://api.ejemplo.com/alumnos'; // Cambia por la tuya
+export class CrudService {
+  private apiUrl = 'https://clients-example-api.fly.dev/swagger#tag/clients'; 
 
   constructor(private http: HttpClient) {}
 
