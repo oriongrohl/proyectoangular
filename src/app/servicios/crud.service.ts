@@ -10,19 +10,19 @@ export class CrudService {
 
   constructor(private http: HttpClient) {}
 
-  getAlumnos(): Observable<any> {
+  getClientes(): Observable<any> {
     return this.http.get(this.apiUrl);
   }
 
-  crearAlumno(data: any): Observable<any> {
+  crearCliente(data: any): Observable<any> {
     return this.http.post(this.apiUrl, data);
   }
 
-  actualizarAlumno(id: number, data: any): Observable<any> {
+  actualizarCliente(id: number, data: any): Observable<any> {
     return this.http.put(`${this.apiUrl}/${id}`, data);
   }
 
-  borrarAlumno(id: number): Observable<any> {
+  borrarCliente(id: number): Observable<any> {
     return this.http.delete(`${this.apiUrl}/${id}`);
   }
 }
